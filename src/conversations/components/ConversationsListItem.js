@@ -12,7 +12,7 @@ export default class ConversationsListItem extends React.Component {
             <p className="m-0 align-self-center">Juan First</p>
             <small className="align-self-center"><i>Lorem ipsum dolor..</i></small>
           </div>
-          <p class=" m-0 text-right">
+          <p className=" m-0 text-right">
             <small><i>10 minutes</i></small>
           </p>
         </a>

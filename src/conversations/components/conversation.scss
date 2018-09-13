@@ -9,26 +9,100 @@
     max-width: $chat-width;
     height: $chat-height;
 
-  .conversation___header {
-    position: fixed;
-    width: 100%;
-    max-width: $chat-width;
-    height: $chat-header-height;
-    box-shadow: 0px 1px 0px 0px rgba(156, 156, 156, 0.5);
-    
-    .conversation___header-meta {
-      font-size: 14px;
-      line-height: 10px;
+    .chat-footer {
+      position: absolute;
+      bottom: 0;
+      max-height: $chat-footer-height;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      
+      #chat-input {
+        resize: none;
+        border: 0;
+        outline: 0;
+        background-color: #d4d4d4;
+        border-radius: 2px;
+        padding: 5px 5px;
+      }
+      
+      #photos-sticker___wrapper {
+        position: absolute;
+        bottom: $chat-footer-height;
+        border: 1px solid #ccc;
+        background: #fff;
+        left: 0;
+        width: 100%;
+        height: $photos-sticker-wrapper-height;
+        
+        #photos-sticker___close-btn {
+          top: -20px;
+          border-radius: 4px;
+          line-height: 20px;
+          box-shadow: 0px -1px 2px 0px rgba(136, 134, 134, 0.5);
+          
+          &::after {
+            content: '';
+            position: absolute;
+            right: -11px;
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid #fff;
+            border-right: 12px solid transparent;
+          }
+          
+          &::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid #fff;
+            border-left: 12px solid transparent;
+          }
+        }
+        
+        .photos-sticker___header {
+          box-shadow: 0px 0px 3px 0px rgba(156, 156, 156, 0.2);
+        }
+        
+        .photos-sticker___body {
+          width: 100%;
+          height: calc(100% - 48px);
+          overflow-y: hidden;
+          overflow-x: auto;
+          white-space: nowrap;
+          box-shadow: inset 0px -1px 14px rgba(0, 0, 0, 0.5);
+          
+          .photos-sticker___img {
+          display: inline-block;
+          width: 120px;
+          height: 120px;
+          }
+          
+          .photos-sticker___sticker {
+            display: inline-block;
+          }
+          
+          .photos___sticker-emojis {
+            display: inline-block !important;
+            white-space: normal;
+            max-width: 400px;
+            height: 100%;
+            overflow-y: auto;
+            margin-right: 10px;
+            
+            > div {
+              margin-bottom: 5px;
+            }
+          }
+        }
+        
+        .photos-sticker___upload-btn {
+          border: 2px dashed #343a40;
+        }
+        
+      }
     }
-  }
-
-  .conversation___body {
-    margin-top: $chat-header-height;
-    width: 100%;
-    overflow-y: auto;
-    position: absolute;
-    transition: height ease 0.5s;
-    height: $chat-body-height;
-  }
  }
 }

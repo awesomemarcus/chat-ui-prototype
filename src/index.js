@@ -7,12 +7,12 @@ import './scss/chat.scss';
 import 'bootstrap/scss/bootstrap.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faTrashAlt, faSearch, faEllipsisV, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faSearch, faEllipsisV, faVideo, faCamera, faImage, faGrin } from '@fortawesome/free-solid-svg-icons';
 
 import ConversationsList from './conversations/components/ConversationsList';
 import Conversation from './conversations/components/Conversation';
 
-library.add(faTrashAlt, faSearch, faEllipsisV, faVideo);
+library.add(faTrashAlt, faSearch, faEllipsisV, faVideo, faCamera, faImage, faGrin);
 
 class App extends React.Component {
   render() {

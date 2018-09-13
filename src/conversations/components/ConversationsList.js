@@ -18,7 +18,7 @@ export default class ConversationsList extends React.Component {
             </div>
             <div className="d-flex flex-row px-2 py-1">
               <input type="text" id="chat-search___input" className="mr-2 w-100"/>
-              <a href="" id="chat-search___btn" class="icon-sm">
+              <a href="" id="chat-search___btn" className="icon-sm">
                 <FontAwesomeIcon icon="search" />
               </a>
             </div>
