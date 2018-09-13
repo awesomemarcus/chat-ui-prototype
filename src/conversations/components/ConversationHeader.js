@@ -10,10 +10,10 @@ export default class ConversationHeader extends React.Component {
           <p className="m-0"><strong>Juan Dela Cruz</strong></p>
           <div className="conversation___header-meta"><small><i>9 minutes ago</i></small></div>
         </div>
-        <a href="" className="mr-2 ml-auto icon-sm">
+        <a href="" className="mr-2 ml-auto icon-md">
           <FontAwesomeIcon icon="video"/>
         </a>
-        <a href="" className="text-dark icon-sm">
+        <a href="" className="text-dark icon-md">
           <FontAwesomeIcon icon="ellipsis-v"/>
         </a>
       </div>

@@ -9,4 +9,5 @@ $chat-body-height: calc((100% - #{$chat-header-height}) - #{$chat-footer-height}
 $conversation-list-height: calc(100% - 30px);
 $chat-item-left-bg: #fff;
 $chat-item-right-bg: skyBlue;
-$icon-sm-font-size: 18px;
+$icon-sm-font-size: 1.15em;
+$icon-md-font-size: 1.5em;
