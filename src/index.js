@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader';
+
 import './scss/main.scss';
-console.log(process.env.NODE_ENV);
+import './scss/chat.scss';
+import 'bootstrap/scss/bootstrap.scss';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrashAlt, faSearch, faEllipsisV, faVideo } from '@fortawesome/free-solid-svg-icons';
+
+import ConversationsList from './conversations/components/ConversationsList';
+import Conversation from './conversations/components/Conversation';
+
+library.add(faTrashAlt, faSearch, faEllipsisV, faVideo);
 
 class App extends React.Component {
   render() {
     return (
-      <div><h1>Hello, Worlds!</h1></div>
+      <React.Fragment>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="#">Navbar</a>
+        </nav>
+        <div id="chat">
+          <ConversationsList />
+          <Conversation />
+        </div>
+      </React.Fragment>
     );
   }
 }

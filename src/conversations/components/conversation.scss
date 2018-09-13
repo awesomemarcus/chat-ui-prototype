@@ -1,0 +1,34 @@
+@import '../../scss/chat-variables.scss';
+
+#chat {
+  .right {
+    position: absolute;
+    right: 0;
+    background-color: #ccc;
+    width: 100%;
+    max-width: $chat-width;
+    height: $chat-height;
+
+  .conversation___header {
+    position: fixed;
+    width: 100%;
+    max-width: $chat-width;
+    height: $chat-header-height;
+    box-shadow: 0px 1px 0px 0px rgba(156, 156, 156, 0.5);
+    
+    .conversation___header-meta {
+      font-size: 14px;
+      line-height: 10px;
+    }
+  }
+
+  .conversation___body {
+    margin-top: $chat-header-height;
+    width: 100%;
+    overflow-y: auto;
+    position: absolute;
+    transition: height ease 0.5s;
+    height: $chat-body-height;
+  }
+ }
+}

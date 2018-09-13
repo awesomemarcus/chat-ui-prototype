@@ -1,0 +1,50 @@
+@import '../../scss/chat-variables.scss';
+
+#chat {
+  .right {
+  .conversation___body {
+    .conversation___chat___item {
+      padding: 10px;
+      border-radius: 5px;
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0px 1px 0px 0px rgba(156, 156, 156, 0.5);
+      
+      &.chat___item-left {
+        background-color: $chat-item-left-bg;
+        margin-left: 10px;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          left: -6px;
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          border-right: 6px solid $chat-item-left-bg;
+          border-bottom: 8px solid transparent;
+        }
+      }
+      
+      &.chat___item-right {
+        background-color: $chat-item-right-bg;
+        margin-right: 10px;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 10px;
+          right: -6px;
+          width: 0;
+          height: 0;
+          border-top: 8px solid transparent;
+          border-left: 6px solid $chat-item-right-bg;
+          border-bottom: 8px solid transparent;
+        }
+      }
+    }
+  }
+ }
+}

@@ -1,0 +1,12 @@
+$conversation-width: 280px;
+$chat-width: calc(100% - #{$conversation-width});
+$chat-height: calc(100% - 55px);
+$chat-header-height: 50px;
+$chat-footer-height: 50px;
+$photos-sticker-wrapper-height: 200px;
+$chat-search-height: 80px;
+$chat-body-height: calc((100% - #{$chat-header-height}) - #{$chat-footer-height});
+$conversation-list-height: calc(100% - 30px);
+$chat-item-left-bg: #fff;
+$chat-item-right-bg: skyBlue;
+$icon-sm-font-size: 18px;

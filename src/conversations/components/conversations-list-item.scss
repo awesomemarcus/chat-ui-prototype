@@ -1,0 +1,22 @@
+@import '../../scss/chat-variables.scss';
+
+#chat {
+  .left {
+    #conversations-list {
+      .conversations-list___item {
+        a {
+          text-decoration: none;
+        }
+      }
+      
+      .conversations-list___item-meta-info {
+        p {
+          line-height: 10px;
+        }
+        small {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

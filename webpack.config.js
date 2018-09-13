@@ -26,13 +26,23 @@ module.exports = {
        }
      },
      {
-       test: /\.(scss|sass)$/,
+       test: /\.(css|scss|sass)$/,
        use: [
          'style-loader',
         //  MiniCssExtractPlugin.loader,
-         'css-loader',
+         {
+           loader: 'css-loader',
+           options: {
+             sourceMap: true
+           }
+         },
          'postcss-loader',
-         'sass-loader'
+         {
+           loader: 'sass-loader',
+           options: {
+             sourceMap: true
+           }
+         }
        ]
      }
    ]
