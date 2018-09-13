@@ -1,0 +1,23 @@
+@import '../../scss/chat-variables.scss';
+
+#chat {
+  .right {
+    .conversation___footer {
+      position: absolute;
+      bottom: 0;
+      max-height: $chat-footer-height;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      
+      #chat-input {
+        resize: none;
+        border: 0;
+        outline: 0;
+        background-color: #d4d4d4;
+        border-radius: 2px;
+        padding: 5px 5px;
+      }
+    }
+ }
+}
