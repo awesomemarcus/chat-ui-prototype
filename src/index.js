@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader';
 
+import 'animate.css';
 import './scss/main.scss';
 import './scss/chat.scss';
 import 'bootstrap/scss/bootstrap.scss';

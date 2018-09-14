@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 import './chat-item.scss';
 
 export default class ChatItem extends React.Component {

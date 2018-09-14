@@ -13,7 +13,7 @@
       width: 100%;
       overflow-y: auto;
       position: absolute;
-      transition: height ease 0.5s;
+      transition: height ease 300ms;
       height: $chat-body-height;
     }
   }

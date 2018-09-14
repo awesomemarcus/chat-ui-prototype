@@ -15,9 +15,9 @@ export default class Conversation extends React.Component {
     this._toggleAttachmentState = this._toggleAttachmentState.bind(this);
   }
 
-  _toggleAttachmentState() {
+  _toggleAttachmentState(state) {
     this.setState({
-      isAttachmentEnabled: !this.state.isAttachmentEnabled,
+      isAttachmentEnabled: state,
     });
   }
 

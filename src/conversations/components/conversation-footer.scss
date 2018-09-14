@@ -21,3 +21,24 @@
     }
  }
 }
+
+.conversation-attachment___animate-enter {
+  opacity: 0.5;
+  transform: scaleY(0);
+  transform-origin: 0% 100%;
+}
+.conversation-attachment___animate-enter-active {
+  opacity: 1;
+  transform: scaleY(1);
+  transition: all 300ms ease-out;
+}
+.conversation-attachment___animate-exit {
+  opacity: 1;
+  transform: scaleY(1);
+  transform-origin: 0% 100%;
+}
+.conversation-attachment___animate-exit-active {
+  opacity: 0;
+  transform: scaleY(0);
+  transition: all 200ms ease-out;
+}

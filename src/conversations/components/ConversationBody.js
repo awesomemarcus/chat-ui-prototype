@@ -17,7 +17,10 @@ class ConversationBody extends React.Component {
 
   _scrollToBottomOnAttachmentEnabled() {
     this.scrollIntoView = setTimeout(() => {
-      if (this.conversationBody.scrollTop > this.conversationBody.clientHeight) {
+      const conversationAttachment = document.querySelector('#conversation-attachment');
+      const conversationBodyBottom = this.conversationBody.scrollTop + this.conversationBody.clientHeight + conversationAttachment.getBoundingClientRect().height; 
+      console.log(this.conversationBody.scrollTop, this.conversationBody.clientHeight, this.conversationBody.scrollHeight, conversationAttachment.getBoundingClientRect().height);
+      if (conversationBodyBottom >= this.conversationBody.scrollHeight) {
         this.messageEnd.scrollIntoView({ behavior: 'smooth'});
       }
     }, 500);

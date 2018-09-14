@@ -1,81 +1,53 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { CSSTransition } from 'react-transition-group';
 
 import './conversation-attachment.scss';
+import ConversationAttachmentImage from './ConversationAttachmentImage';
+import ConversationAttachmentStickers from './ConversationAttachmentStickers';
 
 export default class ConversationAttachment extends React.Component {
   render() {
+      const { attachmentType } =  this.props;
     return (
       <div id="conversation-attachment">
         <a href=""
-          onClick={this.props._handleAttachmentToggle}
+          onClick={this.props._handleAttachmentToggleClose}
           id="conversation-attachment___close-btn"
           className="pos-absolute absolute-tm bg-white px-1 text-danger">
             <small>CLOSE</small>
           </a>
         <div className="conversation-attachment___header text-center p-2 d-flex justify-content-around">
           <a href="" className="w-100 mx-1">
-            <p className="p-1 my-0 bg-secondary text-white rounded">Photos</p>
+            <p className={`p-1 my-0 bg-${attachmentType === 'photos' ? 'secondary text-white' : 'light'} rounded`}>Photos</p>
           </a>
           <a href="" className="w-100 mx-1">
-            <p className="p-1 my-0 bg-light rounded">Stickers</p>
+            <p className={`p-1 my-0 bg-${attachmentType === 'stickers' ? 'secondary text-white' : 'light'} rounded`}>Stickers</p>
           </a>
         </div>
-        <div className="conversation-attachment___body p-2 horizontal-scroll-style-1">
-          <div className="conversation-attachment___img conversation-attachment___upload-btn m-1 rounded pos-relative">
-            <div className="pos-absolute absolute-middle text-center">
-              <FontAwesomeIcon icon="plus"/>
-            </div>
-          </div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-          <div className="conversation-attachment___img bg-dark m-1 rounded"></div>
-        </div>
-        {/* <div class="photos-sticker___body p-2 horizontal-scroll-style-1">
-          <div class="photos___sticker-emojis scroll-style-1 d-flex flex-wrap">
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-            <div class="photos-sticker___sticker chat__item__avatar bg-dark mr-2"></div>
-          </div>
-        </div> */}
+        <CSSTransition
+          in={(attachmentType === 'photos')}
+          timeout={300}
+          classNames={{
+            enter: 'animated',
+            enterActive: 'fadeIn',
+            exit: 'animated',
+            exitActive: 'fadeOut'
+          }}
+          unmountOnExit>
+          <ConversationAttachmentImage />
+        </CSSTransition>
+        <CSSTransition
+          in={(attachmentType === 'stickers')}
+          timeout={300}
+          classNames={{
+            enter: 'animated',
+            enterActive: 'fadeIn',
+            exit: 'animated',
+            exitActive: 'fadeOut'
+          }}
+          unmountOnExit>
+          <ConversationAttachmentStickers />
+        </CSSTransition>
       </div>
     );
   }
