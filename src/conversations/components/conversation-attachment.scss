@@ -1,0 +1,84 @@
+@import '../../scss/chat-variables.scss';
+
+#chat {
+  .right {
+    .conversation___footer {
+      #conversation-attachment {
+        position: absolute;
+        bottom: $chat-footer-height;
+        border: 1px solid #ccc;
+        background: #fff;
+        left: 0;
+        width: 100%;
+        height: $conversation-attachment-wrapper-height;
+        
+        #conversation-attachment___close-btn {
+          top: -20px;
+          border-radius: 4px;
+          line-height: 20px;
+          box-shadow: 0px -1px 2px 0px rgba(136, 134, 134, 0.5);
+          
+          &::after {
+            content: '';
+            position: absolute;
+            right: -11px;
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid #fff;
+            border-right: 12px solid transparent;
+          }
+          
+          &::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            width: 0;
+            height: 0;
+            border-bottom: 20px solid #fff;
+            border-left: 12px solid transparent;
+          }
+        }
+        
+        .conversation-attachment___header {
+          box-shadow: 0px 0px 3px 0px rgba(156, 156, 156, 0.2);
+        }
+        
+        .conversation-attachment___body {
+          width: 100%;
+          height: calc(100% - 48px);
+          overflow-y: hidden;
+          overflow-x: auto;
+          white-space: nowrap;
+          box-shadow: inset 0px -1px 14px rgba(0, 0, 0, 0.5);
+          
+          .conversation-attachment___img {
+          display: inline-block;
+          width: 120px;
+          height: 120px;
+          }
+          
+          .conversation-attachment___sticker {
+            display: inline-block;
+          }
+          
+          .photos___sticker-emojis {
+            display: inline-block !important;
+            white-space: normal;
+            max-width: 400px;
+            height: 100%;
+            overflow-y: auto;
+            margin-right: 10px;
+            
+            > div {
+              margin-bottom: 5px;
+            }
+          }
+        }
+        
+        .conversation-attachment___upload-btn {
+          border: 2px dashed #343a40;
+        }
+      }
+    }
+ }
+}

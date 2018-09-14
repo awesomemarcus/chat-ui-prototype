@@ -3,7 +3,7 @@ $chat-width: calc(100% - #{$conversation-width});
 $chat-height: calc(100% - 55px);
 $chat-header-height: 50px;
 $chat-footer-height: 50px;
-$photos-sticker-wrapper-height: 200px;
+$conversation-attachment-wrapper-height: 200px;
 $chat-search-height: 80px;
 $chat-body-height: calc((100% - #{$chat-header-height}) - #{$chat-footer-height});
 $conversation-list-height: calc(100% - 30px);

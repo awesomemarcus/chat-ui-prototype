@@ -11,6 +11,12 @@ export default class ChatItem extends React.Component {
         {this.renderChatRight()}
         {this.renderChatLeft()}
         {this.renderChatRight()}
+        {this.renderChatLeft()}
+        {this.renderChatRight()}
+        {this.renderChatLeft()}
+        {this.renderChatRight()}
+        {this.renderChatLeft()}
+        {this.renderChatRight()}
       </React.Fragment>
     );
   }
