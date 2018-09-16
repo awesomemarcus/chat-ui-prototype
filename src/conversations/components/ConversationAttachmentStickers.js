@@ -43,6 +43,16 @@ export default class ConversationAttachmentStickers extends React.Component {
               <div className="avatar___sm bg-dark pos-relative"></div>
             </a>
           </div>
+          <div className={`p-1 ${this.state.activeSticker === 'foods' ? 'active' : ''}`}>
+            <a onClick={this._handleActiveStickerMenu} href="" id="foods">
+              <div className="avatar___sm bg-dark pos-relative"></div>
+            </a>
+          </div>
+          <div className={`p-1 ${this.state.activeSticker === 'foods' ? 'active' : ''}`}>
+            <a onClick={this._handleActiveStickerMenu} href="" id="foods">
+              <div className="avatar___sm bg-dark pos-relative"></div>
+            </a>
+          </div>
         </div>
         <CSSTransition
           in={(this.state.activeSticker === 'smileys')}
