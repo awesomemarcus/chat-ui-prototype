@@ -17,10 +17,10 @@ export default class ConversationAttachment extends React.Component {
             <small>CLOSE</small>
           </a>
         <div className="conversation-attachment___header text-center p-2 d-flex justify-content-around">
-          <a href="" className="w-100 mx-1">
+          <a onClick={this.props._handleAttachmentTogglePhotos} href="" className="w-100 mx-1" id="photos">
             <p className={`p-1 my-0 bg-${attachmentType === 'photos' ? 'secondary text-white' : 'light'} rounded`}>Photos</p>
           </a>
-          <a href="" className="w-100 mx-1">
+          <a onClick={this.props._handleAttachmentToggleStickers} href="" className="w-100 mx-1" id="stickers">
             <p className={`p-1 my-0 bg-${attachmentType === 'stickers' ? 'secondary text-white' : 'light'} rounded`}>Stickers</p>
           </a>
         </div>

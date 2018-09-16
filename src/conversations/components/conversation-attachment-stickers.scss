@@ -1,0 +1,47 @@
+@import '../../scss/chat-variables.scss';
+$sticker-menu-width: 50px;
+
+#chat {
+  .right {
+    .conversation___footer {
+      #conversation-attachment {
+        #conversation-attachment-stickers.conversation-attachment___body {
+          #sticker-menu {
+            max-width: $sticker-menu-width;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: #fff;
+            box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+
+            > div {
+              &.active {
+                background-color: #dfdfdf;
+                transition: background-color 300ms ease;
+              }
+              
+              &:hover {
+                background-color: #eee;
+              }
+            }
+          }
+          .conversation-attachment___sticker {
+            display: inline-flex;
+          }
+          
+          .photos___sticker-emojis {
+            display: inline-block;
+            white-space: normal;
+            height: 100%;
+            overflow-y: auto;
+            margin-right: 10px;
+            margin-left: $sticker-menu-width;
+            
+            > div {
+              margin-bottom: 5px;
+            }
+          }
+        }
+      }
+    }
+ }
+}

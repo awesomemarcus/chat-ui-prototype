@@ -31,18 +31,22 @@ export default class ConversationFooter extends React.Component {
           unmountOnExit>
           <ConversationAttachment
             attachmentType={this.state.attachmentType}
+            _handleAttachmentToggleStickers={this._handleAttachmentToggle.bind(this, true)}
+            _handleAttachmentTogglePhotos={this._handleAttachmentToggle.bind(this, true)}
             _handleAttachmentToggleClose={this._handleAttachmentToggle.bind(this, false)}/>
         </CSSTransition>
-        <textarea name="" id="chat-input" className="w-100 mx-1" placeholder="write here..."></textarea>
-        <a href="" className="mx-1 align-self-center icon-md">
-          <FontAwesomeIcon icon="camera"/>
-        </a>
-        <a href="" id="photos" className="mx-1 align-self-center icon-md" onClick={this._handleAttachmentToggle.bind(this, true)}>
-          <FontAwesomeIcon icon="image"/>
-        </a>
-        <a href="" id="stickers" className="mx-1 align-self-center icon-md" onClick={this._handleAttachmentToggle.bind(this, true)}>
-          <FontAwesomeIcon icon="grin"/>
-        </a>
+        <div className="chat-box___wrapper d-flex flex-row justify-content-around p-2 bg-light">
+          <textarea name="" id="chat-input" className="w-100 mx-1" placeholder="write here..."></textarea>
+          <a href="" className="mx-1 align-self-center icon-md">
+            <FontAwesomeIcon icon="camera"/>
+          </a>
+          <a href="" id="photos" className="mx-1 align-self-center icon-md" onClick={this._handleAttachmentToggle.bind(this, true)}>
+            <FontAwesomeIcon icon="image"/>
+          </a>
+          <a href="" id="stickers" className="mx-1 align-self-center icon-md" onClick={this._handleAttachmentToggle.bind(this, true)}>
+            <FontAwesomeIcon icon="grin"/>
+          </a>
+        </div>
       </div>
     );
   }

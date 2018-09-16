@@ -22,6 +22,10 @@
   font-size: $icon-md-font-size;  
 }
 
+.scroll-style-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 .scroll-style-1::-webkit-scrollbar {
   width: 6px;
   background-color: #F5F5F5;
@@ -33,6 +37,7 @@
 
 .scroll-style-1::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #F5F5F5;
 }
 
@@ -48,6 +53,7 @@
 
 .horizontal-scroll-style-1::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   background-color: #F5F5F5;
 }
 
@@ -61,20 +67,33 @@ background-color: #fff;
 font-size: 1.5em;
 }
 
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .pos-absolute {
 position: absolute;
 
-&.absolute-tm {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
+  &.absolute-tl {
+    top: 0;
+    left: 0;
+  }
 
-&.absolute-middle {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  &.absolute-tm {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.absolute-middle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .pos-relative {
