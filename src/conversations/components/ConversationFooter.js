@@ -14,6 +14,14 @@ export default class ConversationFooter extends React.Component {
     };
   }
 
+  componentDidMount() {
+    document.addEventListener('mousedown', (evt) => {
+      if (!this.conversationFooterRef.contains(evt.target)) {
+        if (this.props.isAttachmentEnabled) this.props._toggleAttachmentState(!this.props.isAttachmentEnabled);
+      }
+    });
+  }
+
   _handleAttachmentToggle(state, e) {
     e.preventDefault();
     this.setState({
@@ -23,7 +31,7 @@ export default class ConversationFooter extends React.Component {
 
   render() {
     return (
-      <div className="conversation___footer bg-light d-flex flex-row justify-content-around p-2">
+      <div className="conversation___footer bg-light d-flex flex-row justify-content-around p-2" ref={el => this.conversationFooterRef = el}>
         <CSSTransition
           in={this.props.isAttachmentEnabled}
           timeout={500}

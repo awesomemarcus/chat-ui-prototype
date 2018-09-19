@@ -1,9 +1,18 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import Loadable from 'react-loadable';
 
 import './conversation-attachment.scss';
-import ConversationAttachmentImage from './ConversationAttachmentImage';
-import ConversationAttachmentStickers from './ConversationAttachmentStickers';
+
+const AsyncConversationAttachmentImage = Loadable({
+  loader: () => import('./ConversationAttachmentImage'),
+  loading: <p>loading...</p>
+});
+
+const AsyncConversationAttachmentStickers = Loadable({
+  loader: () => import('./ConversationAttachmentStickers'),
+  loading: <p>loading...</p>
+});
 
 export default class ConversationAttachment extends React.Component {
   render() {
@@ -34,7 +43,7 @@ export default class ConversationAttachment extends React.Component {
             exitActive: 'fadeOut'
           }}
           unmountOnExit>
-          <ConversationAttachmentImage />
+          <AsyncConversationAttachmentImage />
         </CSSTransition>
         <CSSTransition
           in={(attachmentType === 'stickers')}
@@ -46,7 +55,7 @@ export default class ConversationAttachment extends React.Component {
             exitActive: 'fadeOut'
           }}
           unmountOnExit>
-          <ConversationAttachmentStickers />
+          <AsyncConversationAttachmentStickers />
         </CSSTransition>
       </div>
     );
