@@ -3,15 +3,16 @@ import { CSSTransition } from 'react-transition-group';
 import Loadable from 'react-loadable';
 
 import './conversation-attachment.scss';
+import Loading from './Loading';
 
 const AsyncConversationAttachmentImage = Loadable({
   loader: () => import('./ConversationAttachmentImage'),
-  loading: <p>loading...</p>
+  loading: Loading
 });
 
 const AsyncConversationAttachmentStickers = Loadable({
   loader: () => import('./ConversationAttachmentStickers'),
-  loading: <p>loading...</p>
+  loading: Loading
 });
 
 export default class ConversationAttachment extends React.Component {

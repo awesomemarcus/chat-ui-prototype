@@ -1,20 +1,21 @@
 import React from 'react';
 import './conversation.scss';
 import Loadable from 'react-loadable';
+import Loading from './Loading';
 
 const AsyncConversationBody = Loadable({
   loader: () => import('./ConversationBody'),
-  loading: <p>loading...</p>
+  loading: Loading
 });
 
 const AsyncConversationHeader = Loadable({
   loader: () => import('./ConversationHeader'),
-  loading: <p>loading...</p>
+  loading: Loading
 });
 
 const AsyncConversationFooter = Loadable({
   loader: () => import('./ConversationFooter'),
-  loading: <p>loading...</p>
+  loading: Loading
 });
 
 export default class Conversation extends React.Component {

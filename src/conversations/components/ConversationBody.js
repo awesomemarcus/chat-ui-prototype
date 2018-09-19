@@ -1,7 +1,14 @@
 import React from 'react';
-import ChatItem from './ChatItem';
+import Loadable from 'react-loadable';
+
 import './conversation-body.scss';
-import withScrollToComponent from '../../hoc/components/withScrollToComponent';
+import Loading from './Loading';
+
+const AsyncChatItem = Loadable({
+  loader: () => import('./ChatItem'),
+  loading: Loading
+});
+
 
 class ConversationBody extends React.Component {
   constructor(props) {
@@ -29,7 +36,7 @@ class ConversationBody extends React.Component {
   render() {
     return (
       <div className={`conversation___body p-2 attachment-${this.props.isAttachmentEnabled ? 'on' : 'off'} scroll-style-1`} ref={el => this.conversationBody = el}>
-        <ChatItem />
+        <AsyncChatItem />
         <div id="chat-filler" ref={(el) => this.messageEnd = el }></div>
       </div>
     );

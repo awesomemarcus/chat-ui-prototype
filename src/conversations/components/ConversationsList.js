@@ -2,10 +2,11 @@ import React from 'react';
 import Loadable from 'react-loadable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './conversations-list.scss';
+import Loading from './Loading';
 
 const AsyncConversationsListItem = Loadable({
   loader: () => import('./ConversationsListItem'),
-  loading: <p>loading...</p>
+  loading: Loading
 })
 
 export default class ConversationsList extends React.Component {
